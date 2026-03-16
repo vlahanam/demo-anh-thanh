@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050510;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
+::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; }
+
+::selection {
+  background: rgba(74, 144, 217, 0.3);
+  color: white;
+}
+
+/* ─── Swiper base ─── */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+  transform: scale(1.3);
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #fff !important;
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
